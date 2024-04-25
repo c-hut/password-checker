@@ -1,10 +1,12 @@
-from django.shortcuts import render
-from .checker import check_password
+from django.http import JsonResponse
+# Import the program from checker.py
+from .checker import evaluate_password_strength
 
 def check_password(request):
-    if request.method == 'POST':
+    if request.method == 'POST' and request.is_ajax():
         password = request.POST.get('password')
-        strength = check_password(password)  # Call password checking function
-        return render(request, 'password_checker.html', {'strength': strength})
+        # Call password checking function
+        strength = evaluate_password_strength(password)
+        return JsonResponse({'strength': strength})
     else:
-        return render(request, 'password_checker.html')
+        return JsonResponse({'error': 'Invalid request'})
