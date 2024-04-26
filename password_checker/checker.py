@@ -93,16 +93,19 @@ def evaluate_password_strength(password):
     if len(password) < 8:
         return "Weak"
     
-    if not re.search(r'[a-z]', password) or \
-       not re.search(r'[A-Z]', password) or \
-       not re.search(r'\d', password) or \
-       not re.search(r'[a-zA-Z0-9]', password):
-        return 'Weak'
+    criteria_met = 0
     
-    # Check for common patterns
-    if has_common_patterns(password) or \
-        check_date_patterns(password) or \
-        is_palindrome(password):
-            return "Weak"
-
-    return "Strong"
+    if re.search(r'[A-Z]', password):
+       criteria_met += 1
+    if re.search(r'\d', password):
+       criteria_met += 1
+    if re.search(r'[^a-zA-Z0-9]', password):
+        criteria_met += 1
+    
+    if criteria_met == 1:
+        return "Weak"
+    elif criteria_met == 2:
+        return "Medium"
+    elif criteria_met == 3:
+        return "Strong"
+    else: return "Weak"
