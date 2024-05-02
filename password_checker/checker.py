@@ -79,10 +79,13 @@ def is_palindrome(password):
                
 def evaluate_password_strength(password):
     ''' Assess password strength '''
+    if len(password) < 8:
+        return "Weak"
+    
     if is_palindrome(password):
         return "Weak"
     
-    if len(password) < 8:
+    if check_date_patterns(password):
         return "Weak"
     
     criteria_met = 0
