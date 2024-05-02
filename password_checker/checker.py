@@ -43,12 +43,14 @@ COMMON_PASSWORD_PATTERNS = [
     r'grey',
 ]
 
+
 def has_common_patterns(password):
     ''' Check for common patterns '''
     for pattern in COMMON_PASSWORD_PATTERNS:
         if re.search(pattern, password, re.IGNORECASE):
             return True
     return False
+
 
 def check_date_patterns(password):
     ''' Determine whether or not dates have been used '''
@@ -66,17 +68,19 @@ def check_date_patterns(password):
         # YYYY.MM.DD or YYYY.DD.MM
         r'\d{4}.\d{1,2}.\d{1,2}'
     ]
-    
+
     for pattern in date_patterns:
         if re.search(pattern, password):
             return True
     return False
 
+
 def is_palindrome(password):
     ''' Determine whether or not the password is a palindrome '''
     alpha_password = ''.join(char.lower() for char in password if char.isalpha())
     return alpha_password == alpha_password[::-1]
-               
+      
+
 def evaluate_password_strength(password):
     ''' Assess password strength '''
     try:
