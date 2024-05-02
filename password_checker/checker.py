@@ -79,28 +79,31 @@ def is_palindrome(password):
                
 def evaluate_password_strength(password):
     ''' Assess password strength '''
-    if len(password) < 8:
-        return "Weak"
-    
-    if is_palindrome(password):
-        return "Weak"
-    
-    if check_date_patterns(password):
-        return "Weak"
-    
-    criteria_met = 0
-    
-    if re.search(r'[A-Z]', password):
-       criteria_met += 1
-    if re.search(r'\d', password):
-       criteria_met += 1
-    if re.search(r'[^a-zA-Z0-9]', password):
-        criteria_met += 1
-    
-    if criteria_met == 1:
-        return "Weak"
-    elif criteria_met == 2:
-        return "Medium"
-    elif criteria_met == 3:
-        return "Strong"
-    else: return "Weak"
+    try:
+        if len(password) < 8:
+            return "Weak"
+        
+        if is_palindrome(password):
+            return "Weak"
+        
+        if check_date_patterns(password):
+            return "Weak"
+        
+        criteria_met = 0
+        
+        if re.search(r'[A-Z]', password):
+            criteria_met += 1
+        if re.search(r'\d', password):
+            criteria_met += 1
+        if re.search(r'[^a-zA-Z0-9]', password):
+            criteria_met += 1
+        
+        if criteria_met == 1:
+            return "Weak"
+        elif criteria_met == 2:
+            return "Medium"
+        elif criteria_met == 3:
+            return "Strong"
+        else: return "Weak"
+    except Exception as e:
+        return f"Error: {str(e)}"
