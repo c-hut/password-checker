@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-xq*l%apvbqm#4y0aer9_dr@rhg19g+_ns-ylx3sl)w!f186wc-
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'password-checker-qz98.onrender.com'
+    'password-checker-qz98.onrender.com',
+    '127.0.0.1'
 ]
 
 
