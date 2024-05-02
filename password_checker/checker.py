@@ -74,22 +74,14 @@ def check_date_patterns(password):
 
 def is_palindrome(password):
     ''' Determine whether or not the password is a palindrome '''
-    # Convert the password to lower case and remove non-alphanumeric characters
-    alphanumeric_password = ''
-    for char in password:
-        if char.isalnum():
-            alphanumeric_password += char.lower()
-
-    # Check if the alphanumeric password is equal to its reverse using string indexing
-    reversed_password = alphanumeric_password[::-1]
-    if alphanumeric_password == reversed_password:
-        return True
-    else:
-        return False
+    alpha_password = ''.join(char.lower() for char in password if char.isalpha())
+    return alpha_password == alpha_password[::-1]
                
-
 def evaluate_password_strength(password):
     ''' Assess password strength '''
+    if is_palindrome(password):
+        return "Weak"
+    
     if len(password) < 8:
         return "Weak"
     
