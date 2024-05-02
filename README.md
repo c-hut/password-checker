@@ -2,7 +2,7 @@
 
 Nowadays, password hacking is commonplace - which is not surprising at all. According to a recent study, 75% of people don't adhere to password best practices. That means roughly 3 out of 4 people are at risk of having their online accounts compromised. As part of the study, participants were asked why they hadn't taken note of prior warnings, and it was discovered that more than a third of them felt overwhelmed by the prospect of changing their habits. In light of these findings, it seemed to me that a simple solution was needed. Enter, Password Checker. Essentially, it walks users through the process of creating secure passwords. Its accompanying User Interface (UI) isn't fancy, and it was designed without the assumption that its users are tech saavy individuals. It just gets straight to the point, as it should.
 
-![Website screenshot](images/my_project/images/UI-screenshot.png)
+![Website screenshot](my_project\images\UI-screenshot.png)
 
 ## How to Use
 
