@@ -105,7 +105,7 @@ Aside from the above, brute force protection, input validation and session manag
 
 #### Steps
 
-1. Before doing anything, pending migrations to ensure the database scheme was up-to-date; this was achieved by running the following command from the root directory:
+1. Before doing anything, pending migrations were completed to ensure the database scheme was up-to-date; this was achieved by running the following command from the root directory:
 
    `python manage.py migrate`
 
