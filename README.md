@@ -267,6 +267,7 @@ Once you've configured the settings, your service is ready for deployment; the p
   - [URL dispatcher](https://docs.djangoproject.com/en/5.0/topics/http/urls/)
   - [Writing views](https://docs.djangoproject.com/en/5.0/topics/http/views/)
   - [Django settings](https://docs.djangoproject.com/en/5.0/topics/settings/)
+  - [Password management](https://docs.djangoproject.com/en/5.0/topics/auth/passwords/)
 
 - These MDN articles contain key information on Asynchronous JavaScript and XML (AJAX).
 
@@ -278,6 +279,8 @@ Once you've configured the settings, your service is ready for deployment; the p
 
   - [Cross Site Request Forgery (CSRF)](https://owasp.org/www-community/attacks/csrf)
   - [Cross-Site Request Forgery Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)
+
+- A series of [articles](https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/communications-security.html) that explore the topic of secure communication protocols.
 
 - These are the educational articles I added to my UI:
 
