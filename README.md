@@ -220,7 +220,7 @@ Once these steps have been completed, the basic project setup is finished. From 
 
    `cd repository_name`
 
-7. Environment setup: create files necessary for the project. If Node.js is a required dependency, then you'll want to run `npm install`. In this project, a number of dependencies were required, so it was necessary to run the following command:
+7. **Environment setup**: create files necessary for the project. If Node.js is a required dependency, then you'll want to run `npm install`. In this project, a number of dependencies were required, so it was necessary to run the following command:
 
    `pip install -r requirements.txt`
 
@@ -230,9 +230,9 @@ Once these steps have been completed, the basic project setup is finished. From 
 
 8. When changes are made, a series of Git commands can be used to push them to your repository.
 
-   a. `git add` stages either a single or multiple files
-   b. `git commit "Add message here"` saves changes to the local repository
-   c. `git push` uploads local repository content to its remote counterpart
+   a. `git add` stages either a single or multiple files;
+   b. `git commit "Add message here"` saves changes to the local repository;
+   c. `git push` uploads local repository content to its remote counterpart.
 
    Repeat this step as and when necessary.
 
@@ -246,7 +246,7 @@ Once these steps have been completed, the basic project setup is finished. From 
 
 3. When the dropdown list appears, click **Web Service**.
 
-4. From the dropdown list, click 'Connect' next to the GitHub repo within which your code has been stored.
+4. From the dropdown list, click **Connect** next to the GitHub repo within which your code has been stored.
 
 5. Configure the settings.
 
