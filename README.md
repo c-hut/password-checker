@@ -28,6 +28,42 @@ First, users are asked to take note of the criteria. They can then begin enterin
 - Additional password checking criteria, such as penalisation of dictionary words and repeated characters
 - Entropy-based calculations to measure password strength more accurately
 
+## Data Model
+
+For my data model, I decided it would be best to create a password logging class. The model, named PasswordLogger, serves as a logging system for password attempts. It stores essential information such as the password input, the timestamp of the attempt, and whether or not the attempt was successful.
+
+To enhance usability and readability, a method has been included within the class, which defines how instances of the PasswordLogger model are represented as strings. This method ensures that when instances are displayed, they provide a clear and human-readable representation, conveying both the password and the outcome of user inputs.
+
+Overall, the PasswordLogger class offers a structured approach to logging password attempts and allows for the effective analysis of data.
+
+## Security Considerations
+
+As the nature of this project pertains to bolstering the security habits of users across the internet, securing its assets is a key concern.
+
+### Absence of sensitive files from version control
+
+Certain files (i.e. database and logs files) should not be publicly recorded, as they contain sensitive information that could be exploited by malicious actors. It's, therefore, necessary to add them to a `.gitignore` file.
+
+### Secure communication
+
+Ideally, websites should be secured using HTTPS and SSL/TLS protocols. These protocols encrypt data transmitted between the client (browser) and the server, which prevents eavesdropping and so-called man-in-the-middle attacks. Having said that, as this project isn't intended for public use, the necessary certificates have not been set up on my web server.
+
+### Password encryption
+
+Thankfully, Django comes with a built-in make_password function that automatically hashes passwords inputs; it simply needs to be imported from the `hashers` module and (as in this case) incorporated into the relevant view function. This is an imperative feature, as it ensures that passwords aren't stored in plaintext and remain secure in the database.
+
+### CSRF attacks
+
+While users are not required to login and aren't vulnerable to authentication-related CSRF attacks, it is possible for malicious actors to exploit users by making requests to the server without their consent. In doing so, attackers can target specific actions undertaken by the password checking application and add new password checking rules or modify existing logic. For example, they could add a malicious rule that bypasses the evaluation logic and classifies all passwords as '**strong**'. This would severely impact the integrity of the application.
+
+Unfortunately, backend vulnerabilities aren't the only cause for concern, as server-side actions can also be targeted. Actions that accept requests, such as those that modify data, perform calculations, or interact with external systems require protection.
+
+Even if a project doesn't seem to be at immediate risk of compromise, including a CSRF token in HTML forms is considered good practice. Not only does it help to maintain a standard level of security, but it also reduces the risk of overlooked vulnerabilities.
+
+### Additional measures not implemented in this project
+
+Aside from the above, brute force protection, input validation and session management should all be taken into account. Again, as this project isn't intended for widespread use, these features haven't been included. I will keep them in mind for future projects, however, as their inclusion in my projects begets the safety of my users.
+
 ## Testing
 
 ### HTML
@@ -196,3 +232,59 @@ Once these steps have been completed, the basic project setup is finished. From 
 Once you've configured the settings, your service is ready for deployment; the process will be initiated automatically if you selected **Yes** in the **Auto-Deploy** option field.
 
 ## References
+
+### Acknowledgements
+
+- I would like to thank John - a tutor at Code Institute - for aiding me in solving a deployment problem.
+
+- I would also like to thank Tomi Tokko who partnered with freeCodeCamp to provide comprehensive, backend web development courses on YouTube.
+
+### Code Inspiration
+
+- A project-based [tutorial](https://www.youtube.com/watch?v=ftKiHCDVwfA) from which I extracted knowledge about Tailwind CSS.
+
+- A project-based [tutorial](https://www.youtube.com/watch?v=jBzwzrDvZ18) during which Django implementation is explained in depth.
+
+- ChatGPT has aided me in breaking down and understanding key programming concepts.
+
+  ![ChatGPT screenshot (1)](images/chatgpt-1-screenshot.png)
+  ![ChatGPT screenshot (2)](images/chatgpt-2-screenshot.png)
+  ![ChatGPT screenshot (3)](images/chatgpt-3-screenshot.png)
+
+  \* _ChatGPT has been instrumental in terms of developing my understanding of Django._
+
+### Media
+
+- An [article](https://www.beckershospitalreview.com/cybersecurity/30-most-common-passwords-of-2023.html) I read in order to determine the most common password patterns.
+
+- An [article](https://www.programiz.com/python-programming/docstrings) which aided me in refreshing my knowledge about Python commenting best practices.
+
+- The CSS Tailwind [cheetsheet](https://nerdcave.com/tailwind-cheat-sheet) that I used to translate my knowledge of classic CSS styling (inline styles and stylesheets).
+
+- These Django docs cover various topics:
+
+  - [Writing your first Django app](https://docs.djangoproject.com/en/5.0/intro/tutorial01/)
+  - [URL dispatcher](https://docs.djangoproject.com/en/5.0/topics/http/urls/)
+  - [Writing views](https://docs.djangoproject.com/en/5.0/topics/http/views/)
+  - [Django settings](https://docs.djangoproject.com/en/5.0/topics/settings/)
+
+- These MDN articles contain key information on Asynchronous JavaScript and XML (AJAX).
+
+  - A series of [articles](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous) that explain Asynchronous JavaScript.
+
+  - A series of [articles](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs) that explain the process of retrieving data from web servers.
+
+- These articles contain information about CSRF attacks and how to prevent them:
+
+  - [Cross Site Request Forgery (CSRF)](https://owasp.org/www-community/attacks/csrf)
+  - [Cross-Site Request Forgery Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)
+
+- These are the educational articles I added to my UI:
+
+  - [How Weak Passwords Expose You to Serious Security Risks](https://jetpack.com/blog/weak-passwords/#:~:text=Weak%20passwords%20can%20lead%20to,immediate%20and%20devastating%20financial%20implications.)
+  - [Cybersecurity 101: Why Choosing a Secure Password Is So Important](https://www.waldenu.edu/programs/information-technology/resource/cybersecurity-101-why-choosing-a-secure-password-in-so-important)
+  - [Tips for Generating Strong and Unique Passwords](https://www.kaspersky.com/resource-center/threats/how-to-create-a-strong-password)
+  - [How weak passwords could put your organization at risk](https://www.techrepublic.com/article/how-weak-passwords-could-put-your-organization-at-risk/)
+  - [How Hackers Exploit Weak Password Vulnerabilities](https://www.nopsec.com/blog/weak-passwords-exploit/)
+
+- Reading this [article](https://www.securitymagazine.com/articles/99529-3-in-4-people-at-risk-of-being-hacked-due-to-poor-password-practices) aided me in understanding hacking statistics and risks
