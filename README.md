@@ -305,6 +305,9 @@ Once you've configured the settings, your service is ready for deployment; the p
   - [Writing views](https://docs.djangoproject.com/en/5.0/topics/http/views/)
   - [Django settings](https://docs.djangoproject.com/en/5.0/topics/settings/)
   - [Password management](https://docs.djangoproject.com/en/5.0/topics/auth/passwords/)
+  - [Making queries](https://docs.djangoproject.com/en/5.0/topics/db/queries/)
+
+- An [article](https://www.geeksforgeeks.org/django-orm-inserting-updating-deleting-data/) which explains the ins and outs of Django's ORM.
 
 - These MDN articles contain key information on Asynchronous JavaScript and XML (AJAX).
 
