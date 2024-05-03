@@ -166,7 +166,7 @@ This project was deployed using Django, a high-level web framework, and Render, 
 
    \* _Replace **project_name** with a name of your choice._
 
-4. Navigate to the project directory: use the `cd` command to access the directory of the newly created Django project.
+4. **Navigate to the project directory**: use the `cd` command to access the directory of the newly created Django project.
 
    `cd project_name`
 
@@ -176,7 +176,7 @@ This project was deployed using Django, a high-level web framework, and Render, 
 
    \* _Replace **app_name** with the name of your app._
 
-6. Define URL patterns: these must be defined in the `urls.py` file - within the app directory - to map URLs to views; this is where you should specify which views are to be called for each constructed URL. Read more about URL patterns [here](https://docs.djangoproject.com/en/5.0/topics/http/urls/).
+6. **Define URL patterns**: these must be defined in the `urls.py` file - within the app directory - to map URLs to views; this is where you should specify which views are to be called for each constructed URL. Read more about URL patterns [here](https://docs.djangoproject.com/en/5.0/topics/http/urls/).
 
 7. **Define views**: these are Python functions or classes designed to handle requests and return responses. Views should be defined in `views.py` - located within the app directory. Read more about views [here](https://docs.djangoproject.com/en/5.0/topics/http/views/).
 
