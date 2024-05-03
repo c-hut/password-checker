@@ -206,7 +206,7 @@ Once these steps have been completed, the basic project setup is finished. From 
 
    If it was successful, the Git version should be displayed within the Terminal.
 
-4. Back in VS Code, navigate to the directory within which your project directory; the command should look something like this:
+4. Back in VS Code, navigate to the overarching directory within which your project directory is housed; the command should look something like this:
 
    `cd Desktop/projects`
 
