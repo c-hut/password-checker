@@ -1,6 +1,10 @@
 # Password Checker
 
-Nowadays, password hacking is commonplace - which is not surprising at all. According to a recent study, 75% of people don't adhere to password best practices. That means roughly 3 out of 4 people are at risk of having their online accounts compromised. As part of the study, participants were asked why they hadn't taken note of prior warnings, and it was discovered that more than a third of them felt overwhelmed by the prospect of changing their habits. In light of these findings, it seemed to me that a simple solution was needed. Enter, Password Checker. Essentially, it walks users through the process of creating secure passwords. Its accompanying User Interface (UI) isn't fancy, and it was designed without the assumption that its users are tech saavy individuals. It just gets straight to the point, as it should.
+Nowadays, password hacking is commonplace - which is not surprising at all. According to a recent study, 75% of people don't adhere to password best practices. That means roughly 3 out of 4 people are at risk of having their online accounts compromised.
+
+As part of the study, participants were asked why they hadn't taken note of prior warnings, and it was discovered that more than a third of them felt overwhelmed by the prospect of changing their habits. In light of these findings, it seemed to me that a simple solution was needed. Enter, Password Checker.
+
+Essentially, it walks users through the process of creating secure passwords. Its accompanying User Interface (UI) isn't fancy, and it was designed without the assumption that its users are tech saavy individuals. It just gets straight to the point, as it should.
 
 ![Website screenshot](images/UI-screenshot.png)
 
@@ -8,7 +12,7 @@ Nowadays, password hacking is commonplace - which is not surprising at all. Acco
 
 ## How to Use
 
-First, users are asked to take note of the criteria. They can then begin entering their password, choosing to toggle its visibility by clicking the 'Reveal/Hide Password' button. Once they've input their password, they can click the 'Check Strength' button to determine its strength. They will receive immediate feedback. Depending on whether or not their password meets the specified criteria, they will be informed that their password is either weak, medium or strong. Once they've created a suitable password, they can explore resources which will help them to understand the critical importance of creating secure passwords.
+First, users are asked to take note of the criteria. They can then begin entering their password, choosing to toggle its visibility by clicking the 'Reveal/Hide Password' button. Once they've input their password, they can click the 'Check Strength' button to determine its strength; they will receive immediate feedback. Depending on whether or not their password meets the specified criteria, they will be informed that their password is either weak, medium or strong. Once they've created a suitable password, they can explore resources which will help them to understand the critical importance of creating secure passwords.
 
 ## Features
 
@@ -42,7 +46,7 @@ As the nature of this project pertains to bolstering the security habits of user
 
 ### Absence of sensitive files from version control
 
-Certain files (i.e. database and logs files) should not be publicly recorded, as they contain sensitive information that could be exploited by malicious actors. It's, therefore, necessary to add them to a `.gitignore` file.
+Certain files (i.e. database and log files) should not be publicly recorded, as they contain sensitive information that could be exploited by malicious actors. It's, therefore, necessary to add them to a `.gitignore` file.
 
 ### Secure communication
 
@@ -50,7 +54,7 @@ Ideally, websites should be secured using HTTPS and SSL/TLS protocols. These pro
 
 ### Password encryption
 
-Thankfully, Django comes with a built-in make_password function that automatically hashes passwords inputs; it simply needs to be imported from the `hashers` module and (as in this case) incorporated into the relevant view function. This is an imperative feature, as it ensures that passwords aren't stored in plaintext and remain secure in the database.
+Thankfully, Django comes with a built-in `make_password` function that automatically hashes password inputs; it simply needs to be imported from the `hashers` module and (as in this case) incorporated into the relevant view function. This is an imperative feature, as it ensures that passwords aren't stored in plaintext and remain secure in the database.
 
 ### CSRF attacks
 
@@ -62,7 +66,7 @@ Even if a project doesn't seem to be at immediate risk of compromise, including 
 
 ### Additional measures not implemented in this project
 
-Aside from the above, brute force protection, input validation and session management should all be taken into account. Again, as this project isn't intended for widespread use, these features haven't been included. I will keep them in mind for future projects, however, as their inclusion in my projects begets the safety of my users.
+Aside from the above, brute force protection, input validation and session management should all be taken into account. Again, as this project isn't intended for widespread use, these features haven't been included. I will keep them in mind for future projects, however, as their inclusion begets the safety of my users.
 
 ## Testing
 
@@ -120,7 +124,7 @@ Aside from the above, brute force protection, input validation and session manag
     from password_checker.models import PasswordLogger
 
     # Create a new PasswordLogger instance
-    logger = PasswordLogger(password="example_password, success=False)
+    logger = PasswordLogger(password=example_password, success=False)
 
     # Save the instance to the database
     logger.save()
@@ -150,13 +154,13 @@ This project was deployed using Django, a high-level web framework, and Render, 
 
 #### Part 1: Setting up the Django project directory in VS Code
 
-1. Install Python: if Python hasn't already been installed in the development environment, download and install it from the official Python website.
+1. **Install Python**: if Python hasn't already been installed in the development environment, download and install it from the official Python website.
 
-2. Install Django: if Django hasn't already been installed, install it via the CLI using the following command:
+2. **Install Django**: if Django hasn't already been installed, install it via the CLI using the following command:
 
    `pip install django`
 
-3. Create a Django project: navigate to the directory where you'd like to create the Django project and run the following command:
+3. **Create a Django project**: navigate to the directory where you'd like to create the Django project and run the following command:
 
    `django-admin startproject project_name`
 
@@ -166,19 +170,19 @@ This project was deployed using Django, a high-level web framework, and Render, 
 
    `cd project_name`
 
-5. Create a Django app: these are essentially components within a Django project that handle specific functions. In order to create a new app, run the following command:
+5. **Create a Django app**: these are essentially components within a Django project that handle specific functions. In order to create a new app, run the following command:
 
    `python manage.py startapp app_name`
 
-   \* _Replace **app_name** with the name of your app_
+   \* _Replace **app_name** with the name of your app._
 
 6. Define URL patterns: these must be defined in the `urls.py` file - within the app directory - to map URLs to views; this is where you should specify which views are to be called for each constructed URL. Read more about URL patterns [here](https://docs.djangoproject.com/en/5.0/topics/http/urls/).
 
-7. Define views: these are Python functions or classes designed to handle requests and return responses. Views should be defined in `views.py` - located within the app directory. Read more about views [here](https://docs.djangoproject.com/en/5.0/topics/http/views/).
+7. **Define views**: these are Python functions or classes designed to handle requests and return responses. Views should be defined in `views.py` - located within the app directory. Read more about views [here](https://docs.djangoproject.com/en/5.0/topics/http/views/).
 
-8. Configure settings: these settings moderate the behaviour of your Django project; database connection, static files, and middleware should all be configured in `settings.py`. Read more about settings [here](https://docs.djangoproject.com/en/5.0/topics/settings/).
+8. **Configure settings**: these settings moderate the behaviour of your Django project; database connection, static files, and middleware should all be configured in `settings.py`. Read more about settings [here](https://docs.djangoproject.com/en/5.0/topics/settings/).
 
-9. Add necessary files: a number of files are needed for successful deployment, such as a `requirements.txt` file within which dependencies need to be added; a `.gitattributes` file within which attributes can be assigned to pathnames, and so on.
+9. **Add necessary files**: a number of files are needed for successful deployment, such as a `requirements.txt` file within which dependencies need to be added; a `.gitattributes` file within which attributes can be assigned to pathnames, and so on.
 
 10. When you're ready, start the development server by running the following command:
 
@@ -190,9 +194,9 @@ Once these steps have been completed, the basic project setup is finished. From 
 
 #### Part 2: creating a local GitHub repository clone
 
-1. Locate the repository: navigate to the GitHub repository you want to clone
+1. **Locate the repository**: navigate to the GitHub repository you want to clone
 
-2. Clone the repository: on the repository page, locate the green **<> Code** button; this will reveal the URL for the repository. Click the clipboard icon to copy the URL.
+2. **Copy the repository URL**: on the repository page, locate the green **<> Code** button; this will reveal the URL for the repository. Click the clipboard icon to copy the URL.
 
 3. At this stage, you'll need to have Git installed. If it isn't already available in your local environment, and you're using Windows, you can download and install it from the official Git website: [Git for Windows](https://gitforwindows.org/).
 
@@ -208,11 +212,11 @@ Once these steps have been completed, the basic project setup is finished. From 
 
    \* _**Note:** it's not advised to store it directly within the project directory due to security risks, organisation issues and other potential conflicts._
 
-5. Clone the repository: once you've switched into the desired directory, use the `git clone` command followed by the repository URL you copied from GitHub.
+5. **Clone the repository**: once you've switched into the desired directory, use the `git clone` command followed by the repository URL you copied from GitHub.
 
    `git clone https://github.com/username/repository.git`
 
-6. Enter the cloned directory: after cloning, switch into the newly created directory using the `cd` command.
+6. **Enter the cloned directory**: after cloning, switch into the newly created directory using the `cd` command.
 
    `cd repository_name`
 
